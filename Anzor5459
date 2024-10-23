@@ -1,0 +1,42 @@
+function replicatedDoor(room)
+	for _,strip in pairs(room:GetDescendants()) do
+		if strip:IsA("BasePart") and strip.Material ~= Enum.Material.Neon and not strip.Parent:FindFirstChild("ModulePrompt") then
+			strip.BrickColor = BrickColor.new("red")
+		end
+	end
+end
+for _, v in pairs(workspace.CurrentRooms:GetChildren()) do
+        replicatedDoor(v)
+    end
+workspace.CurrentRooms.ChildAdded:Connect(function()
+	for _, v in pairs(workspace.CurrentRooms:GetChildren()) do
+        replicatedDoor(v)
+    end
+end)
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Made by anzor)
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+wait(1)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Creepy mode",true)
+wait(3)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("l'm gay :)",true)
+
+-- Froger 
+coroutine.wrap(function()
+    while true do
+        wait(math.random(20,30))
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(2)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Anzor5458/Froger/refs/heads/main/Pressure'))()
+    end
+end)()
+
+-- chainsmoker 
+coroutine.wrap(function()
+    while true do
+        wait(math.random(20,30))
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(2)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Anzor5458/Chainsmoker-/refs/heads/main/Pressure'))()
+    end
+end)()
